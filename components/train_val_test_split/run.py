@@ -37,7 +37,7 @@ def go(args):
     # Save to output files
     for df, k in zip([trainval, test], ['trainval', 'test']):
         logger.info(f"Uploading {k}_data.csv dataset")
-        with tempfile.NamedTemporaryFile("w") as fp:
+        with open("tmpfile", 'w') as fp:
 
             df.to_csv(fp.name, index=False)
 
